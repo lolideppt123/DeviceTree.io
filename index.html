@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: linear-gradient(90deg, #ffcb74, #4f8a8b);
+            font-family: sans-serif;
+            margin: auto;
+            width: 80%;
+            justify-content: center;
+        }
+
+        #wrap input, #wrap select {
+            border: none;
+            font-size: 1rem;
+            padding: .3rem;
+            display: flex;
+        }
+
+        div {
+            margin: 10px;
+        }
+
+        .button:hover {
+            opacity: 55%;
+        }
+
+        #enableChk {
+            float: left;
+            margin: 2px;
+        }
+
+        #vdPrev, #vdNext, #hdPrev, #hdNext, #ssdPrev, #ssdNext, #vdUpdate, #vdNew, #hdUpdate, #hdNew, #ssdUpdate, #ssdNew{
+            border: none;
+            font-size: 1rem;
+            padding: .3rem;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+            justify-content: flex-end;
+            display: flex;
+        }
+
+        #vdPrev, #vdNext, #hdPrev, #hdNext, #ssdPrev, #ssdNext  {
+            float: left;
+        }
+
+        #vdUpdate, #vdNew, #hdUpdate, #hdNew, #ssdUpdate, #ssdNew {
+            float: right;
+        }
+
+        .panel {
+            margin: 0.5rem;
+            float: left;
+            border: solid black 2px;
+            padding: .5rem;
+            min-height: 55vh;
+        }
+
+    </style>
+</head>
+<body onload="loadVD()">
+
+    <div id="wrap">
+        <div id="enable">
+            <label>Enable/Disable</label>
+            <input type="checkbox" id="enableChk">
+            <p></p>
+        </div>
+        <div class="first panel">
+            <h3>Video Device</h3>
+            <div><label>Replacement Cost: </label>
+                <input type="text" id="vdRepCost" placeholder="$" >
+            </div>
+            <div><label>Supplier Name: </label>
+                <input type="text" id="vdSuppName" placeholder="" >
+            </div>
+            <div><label>Serial Number: </label>
+                <input type="text" id="vdSNum" placeholder="" >
+            </div>
+            <div><label>Resolution: </label>
+                <input type="text" id="reso1" placeholder=""> x 
+                <input type="text" id="reso2" placeholder="" >
+            </div>
+            <div><label>Type</label>
+                <select id="vdType">
+                    <option>LCD</option>
+                    <option>LED</option>
+                    <option>Plasma</option>
+                </select>
+            </div>
+            <div id="vdBtn">
+                <input type="button" value="Previous" id="vdPrev" class="button">
+                <input type="button" value="Next" id="vdNext" class="button">
+                <input type="button" value="New" id="vdNew" class="button">
+                <input type="button" value="Update" id="vdUpdate" class="button">
+            </div>
+        </div>
+        <div class="second panel">
+            <h3>Hard Disk</h3>
+            <div><label>Replacement Cost: </label>
+                <input type="text" placeholder="$" id="hdRepCost">
+            </div>
+            <div><label>Supplier Name: </label>
+                <input type="text" placeholder="" id="hdSuppName">
+            </div>
+            <div><label>Serial Number: </label>
+                <input type="text" placeholder="" id="hdSNum">
+            </div>
+            <div><label>Size: </label>
+                <input type="text" placeholder="" id="hdSize">
+            </div>
+            <div><label>Transfer Rate: </label>
+                <input type="text" placeholder="" id="hdTRate">
+            </div>
+            <div><label>Platter Size: </label>
+                <input type="text" placeholder="" id="hdPSize">
+            </div>
+            <div><label>Number of Platters: </label>
+                <input type="text" placeholder="" id="hdNumPlat">
+            </div>
+            <div id="hdBtn">
+                <input type="button" value="Previous" id="hdPrev" class="button">
+                <input type="button" value="Next" id="hdNext" class="button">
+                <input type="button" value="New" id="hdNew" class="button">
+                <input type="button" value="Update" id="hdUpdate" class="button">
+            </div>
+        </div>
+        <div class="third panel">
+            <h3>SSD</h3>
+            <div><label>Replacement Cost: </label>
+                <input type="text" placeholder="$" id="ssdRepCost">
+            </div>
+            <div><label>Supplier Name: </label>
+                <input type="text" placeholder="" id="ssdSuppName">
+            </div>
+            <div><label>Serial Number: </label>
+                <input type="text" placeholder="" id="ssdSNum">
+            </div>
+            <div><label>Size: </label>
+                <input type="text" placeholder="" id="ssdSize">
+            </div>
+            <div><label>Transfer Rate: </label>
+                <input type="text" placeholder="" id="ssdTRate">
+            </div>
+            <div><label>Type: </label>
+                <select id="ssdType">
+                    <option>Flash</option>
+                    <option>DRAM</option>
+                </select>
+            </div>
+            <div><label>Wear Leveling: </label>
+                <input type="checkbox" id="ssdWearlvl">
+            </div>
+            <div id="ssdBtn">
+                <input type="button" value="Previous" id="ssdPrev" class="button">
+                <input type="button" value="Next" id="ssdNext" class="button">
+                <input type="button" value="New" id="ssdNew" class="button">
+                <input type="button" value="Update" id="ssdUpdate" class="button">
+            </div>
+        </div>
+    </div>
+   <script src="index.js"></script>
+</body>
+</html>
